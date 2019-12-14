@@ -31,6 +31,7 @@ jobs:
                   mkdir .github_actions
                   touch .github_actions/.SFDX_URL_STORE.txt
                   curl -u ${{ secrets.KVDB_KEY}} ${{ secrets.KVDB_URL }}/$value -o .github_actions/.SFDX_URL_STORE.txt
+                  rm -r .github_actions
             - name: Authenticate against scratch org
               uses: forcedotcom/salesforcedx-actions@master
               if: steps.check.outputs.isMatch == 'true'
