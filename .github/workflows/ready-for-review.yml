@@ -31,7 +31,6 @@ jobs:
                   mkdir .github_actions
                   touch .github_actions/.SFDX_URL_STORE.txt
                   curl -u ${{ secrets.KVDB_KEY}} ${{ secrets.KVDB_URL }}/$value -o .github_actions/.SFDX_URL_STORE.txt
-                  rm -r .github_actions
             - name: Authenticate against scratch org
               uses: forcedotcom/salesforcedx-actions@master
               if: steps.check.outputs.isMatch == 'true'
@@ -46,6 +45,7 @@ jobs:
               if: steps.check.outputs.isMatch == 'true'
               shell: bash
               run: |
+                  rm -r .github_actions
                   git config --local user.email "action@github.com"
                   git config --local user.name "GitHub Action"
                   git switch -c branch/${{ steps.unstash.outputs.project_card_value }}
