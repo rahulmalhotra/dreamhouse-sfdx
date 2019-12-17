@@ -35,13 +35,6 @@
             </componentInstanceProperties>
             <componentName>SimilarProperties</componentName>
         </componentInstances>
-        <componentInstances>
-            <componentInstanceProperties>
-                <name>height</name>
-                <value>500px</value>
-            </componentInstanceProperties>
-            <componentName>Bot</componentName>
-        </componentInstances>
         <name>right</name>
         <type>Region</type>
     </flexiPageRegions>
